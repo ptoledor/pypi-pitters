@@ -5,7 +5,7 @@ with open("README.md", "r", encoding = "utf-8") as f:
 
 setuptools.setup(
     name = "pitters",
-    version = "0.0.1",
+    version = "1.0",
     author = "Pedro Toledo",
     author_email = "ptoledor@msn.com",
     description = "Simple and useful functions for data analysis",

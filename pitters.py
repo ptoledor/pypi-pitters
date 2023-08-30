@@ -3,36 +3,45 @@ import numpy as np
 import unicodedata
 
 
-def standard_string(cadena, case='original', keep_enie=False):
+def sanitize_spaces(string):
+    return ' '.join(string.split())
 
-    #Quita espacios excesivos    
-    cadena = ' '.join(cadena.split())
-    
+
+def convert_case(string, case='original'):
     #Deja el case requerido
     if case == 'original':
-        pass
+        return string
     elif case == 'upper' or case == 'uppercase' or case == 'mayus':
-        cadena = cadena.upper()
+        string = string.upper()
 
     elif case =='lower' or case == 'lowercase' or case == 'minus':
-        cadena = cadena.lower()
+        string = string.lower()
 
     elif case == 'capitalize' or case == 'capital':
-        cadena = cadena.capitalize()
+        string = string.capitalize()
 
     else:
         ValueError("El argumento de 'case' = ['original', 'upper', 'lower', 'capitalize']")
 
 
-    #Quita acentos y non-ASCII characters
-    if keep_enie == True:
-        cadena = cadena.replace("ñ", "#!#").replace("Ñ", "$!$")
-        cadena = unicodedata.normalize('NFKD', cadena).encode('ascii','ignore').decode('ascii')
-        cadena = cadena.replace("#!#", "ñ").replace("$!$", "Ñ")
+def to_ascii(string, enie=False):
+    if enie == True:
+        string = string.replace("ñ", "#!#").replace("Ñ", "$!$")
+        string = unicodedata.normalize('NFKD', string).encode('ascii','ignore').decode('ascii')
+        string = string.replace("#!#", "ñ").replace("$!$", "Ñ")
     else:
-        cadena = unicodedata.normalize('NFKD', cadena).encode('ascii','ignore').decode('ascii')
+        string = unicodedata.normalize('NFKD', string).encode('ascii','ignore').decode('ascii')
+    return string
 
-    return cadena
+
+def sanitize_string(string, case='original', enie=False):
+    string = sanitize_spaces(string)
+    string = convert_case(string, case=case)
+    string = to_ascii(string, enie=enie)
+    return string
+
+#Aliases
+sanear_texto = sanitize_string
 
 
 
