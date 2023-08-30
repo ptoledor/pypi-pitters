@@ -22,6 +22,6 @@ setuptools.setup(
         "Operating System :: OS Independent",
     ],
     packages = setuptools.find_packages(),
-    install_requires=[], 
+    install_requires=['pandas', 'numpy'], 
     python_requires = ">=3.6",
 )

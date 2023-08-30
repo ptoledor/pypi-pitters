@@ -4,4 +4,5 @@ setup.py
 pitters.egg-info/PKG-INFO
 pitters.egg-info/SOURCES.txt
 pitters.egg-info/dependency_links.txt
+pitters.egg-info/requires.txt
 pitters.egg-info/top_level.txt
