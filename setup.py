@@ -1,11 +1,11 @@
 import setuptools
 
-with open("README.md", "r", encoding = "utf-8") as f:
+with open('README.md', 'r') as f:
     long_description = f.read()
-
+''
 setuptools.setup(
     name = "pitters",
-    version = "1.0",
+    version = "1.1",
     author = "Pedro Toledo",
     author_email = "ptoledor@msn.com",
     description = "Simple and useful functions for data analysis",

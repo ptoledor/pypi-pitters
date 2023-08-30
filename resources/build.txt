@@ -1,0 +1,4 @@
+python setup.py sdist bdist_wheel
+pip uninstall pitters
+pip install ./dist/pitters-0.0.1.tar.gz
+twine upload --verbose dist/*

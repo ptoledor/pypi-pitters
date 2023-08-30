@@ -1,6 +1,8 @@
 LICENSE
 README.md
 setup.py
+pitters/__init__.py
+pitters/pandas.py
 pitters.egg-info/PKG-INFO
 pitters.egg-info/SOURCES.txt
 pitters.egg-info/dependency_links.txt
