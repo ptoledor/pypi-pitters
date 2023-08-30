@@ -8,14 +8,11 @@ setuptools.setup(
     version = "0.0.1",
     author = "Pedro Toledo",
     author_email = "ptoledor@msn.com",
-    description = "short package description",
+    description = "Simple and useful functions for data analysis",
     long_description = long_description,
     long_description_content_type = "text/markdown",
     url = "https://github.com/ptoledor/pypi-pitters",
     license="MIT",
-    project_urls = {
-        "Bug Tracker": "package issues URL",
-    },
     classifiers = [
         "Programming Language :: Python :: 3",
         "License :: OSI Approved :: MIT License",
