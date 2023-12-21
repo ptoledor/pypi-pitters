@@ -14,7 +14,7 @@ def string_to_ascii(string, enie=False):
     return string
 
 
-def stringmagic(string, case='original', enie=False):
+def string_magic(string, enie=False):
     string = string_spaces(string)
     string = string_to_ascii(string, enie=enie)
     return string
